@@ -396,6 +396,7 @@ Framerate is ${framerate} (${decimalFramerate}).`)
 			subProcess.length = 0
 			process.stdout.write(`\nSuccessfully converted all frames to webm.`)
 			break
+			// i hate all of this but there is nothing i can do :sob:
 		}
 	}
 	process.stdout.write('\n')
