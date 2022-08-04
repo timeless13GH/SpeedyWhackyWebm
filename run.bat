@@ -20,4 +20,4 @@ echo Installing Dependencies - this might take a while the first time.
 call npm i
 
 echo Starting UI
-cmd npm run terminal_ui
+npm run terminal_ui
