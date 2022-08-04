@@ -5,6 +5,10 @@ Make WebM files with changing aspect ratios
 By OIRNOIR#0032
 */
 
+/*
+doing some wierd removing of stuff we dont need
+*/
+
 const path = require('path')
 const fs = require('fs')
 // Synchronous execution via promisify.
@@ -63,7 +67,7 @@ const argsConfig = [
 	},
 	{
 		keys: ['--thread'],
-		default: () => (maxThread = 2),
+		default: () => (maxThread = 6),
 		call: (val) => (maxThread = parseInt(val)),
 		getValue: () => maxThread,
 		description: 'sets maximum allowed number of threads to use',
@@ -92,7 +96,7 @@ const argsConfig = [
 	},
 	{
 		keys: ['-c', '--compression'],
-		default: () => (compressionLevel = 0),
+		default: () => (compressionLevel = 6),
 		call: (c) => (compressionLevel = c),
 		getValue: () => compressionLevel,
 		description: 'sets compression level (higher value means more compression)',
