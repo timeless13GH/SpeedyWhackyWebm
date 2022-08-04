@@ -271,10 +271,23 @@ Framerate is ${framerate} (${decimalFramerate}).`)
 		audioFlag = false
 	}
 
+	// Sets FPS to 25 to fix some misalignment
+	/* broken will fix later
+	console.log('Changing FPS to 25')
+	try {
+		await execSync(`ffmpeg -i "${videoPath}" -filter:v fps=fps=25 out.webm`, {}) 
+		filename = "out.webm"
+		console.log('Done')
+
+	} catch (e) {
+		console.warn("Unable to change fps audio may be misaligned")
+	}
+	*/
+
 	// Extracts the frames to be modified for the wackiness.
 	console.log('Splitting file into frames...')
 	try {
-		await execSync(`ffmpeg -threads ${maxThread} -y -i "${videoPath}" "${workLocations.tempFrameFiles}"`, { maxBuffer: 1024 * 1000 * 8 /* 8mb */ })
+		await execSync(`ffmpeg -threads ${maxThread} -y -i "out.webm" "${workLocations.tempFrameFiles}"`, { maxBuffer: 1024 * 1000 * 8 /* 8mb */ })
 	} catch (e) {
 		ffmpegErrorHandler(e)
 	}
