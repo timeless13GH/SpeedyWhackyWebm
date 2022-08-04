@@ -136,3 +136,5 @@ dist
 
 # Ignore tempfiles created during testing
 tempFiles/
+#testing a
+myStuff/
