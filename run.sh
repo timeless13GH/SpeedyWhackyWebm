@@ -7,12 +7,15 @@ echo "
     \  /\  / (_| | (__|   <| |_| |\  /\  /  __/ |_) | |  | |
      \/  \/ \__,_|\___|_|\_\\\\\__, | \/  \/ \___|_.__/|_|  |_|
                              __/ |                          
-                            |___/                           
+                            |___/    
+
+SPEEDY EDITION (with gui made by Azrael#1123 on discord tee hee)
+
+also if your pc has 8 or under threads please dont run this, if it does set the threads lower in the gui config on the next screen                          
 "
 
-# Ask for required inputs
-read -p "Mode (audiobounce, audioshutter, bounce, jumpscare, keyframes, shrink, shutter, sporadic): " mode
-read -p "File: " file
+echo "Installing Dependencies - this might take a while the first time."
+npm i
 
-# Run node commmand
-node wackywebm.js $mode "$file"
+echo "Starting UI"
+npm run terminal_ui
